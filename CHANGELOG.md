@@ -2,10 +2,10 @@ CHANGELOG
 =========
 
 # 0.0.1
-Added bower support
+Added bower support.
 
 ## 0.0.0
-Working plugin
+Working plugin.
 
 ## HEAD (Unreleased)
 _(none)_
