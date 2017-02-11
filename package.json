@@ -6,6 +6,10 @@
   "generator-videojs-plugin": {
     "version": "2.2.0"
   },
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/johnsonjo4531/videojs-gifplayer"
+  },
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm-run-all -p build:*",
