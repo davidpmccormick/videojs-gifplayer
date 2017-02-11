@@ -3,9 +3,8 @@ import debounce from 'lodash.debounce';
 
 // Default options for the plugin.
 const defaults = {
-  'controls': false,
-  'autoplay': true,
-  'loop': true
+  controls: false,
+  loop: true
 };
 
 // http://stackoverflow.com/a/7557433/2066736
