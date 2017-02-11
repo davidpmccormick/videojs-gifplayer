@@ -1,6 +1,6 @@
 /**
  * videojs-gifplayer
- * @version 0.0.1
+ * @version 0.0.2
  * @copyright 2017 John D. Johnson II <johnsonjo4531@gmail.com>
  * @license MIT
  */
@@ -545,7 +545,7 @@ var gifplayer = function gifplayer(options) {
 _video2.default.plugin('gifplayer', gifplayer);
 
 // Include the version number.
-gifplayer.VERSION = '0.0.1';
+gifplayer.VERSION = '0.0.2';
 
 exports.default = gifplayer;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
