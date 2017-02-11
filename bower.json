@@ -3,6 +3,7 @@
   "author": "John D. Johnson II &lt;johnsonjo4531@gmail.com&gt;",
   "license": "MIT",
   "main": [
+    "dist/videojs-gifplayer.css",
     "dist/videojs-gifplayer.min.js"
   ],
   "keywords": [

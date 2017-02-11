@@ -12,6 +12,12 @@ Plays gifs that are in video format automatically with looping only when in view
 npm install --save videojs-gifplayer
 ```
 
+The npm installation is preferred, but Bower works, too.
+
+```sh
+bower install  --save videojs-gifplayer
+```
+
 ## Usage
 
 To include videojs-gifplayer on your website or web application, use any of the following methods.

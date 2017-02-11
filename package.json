@@ -1,6 +1,6 @@
 {
   "name": "videojs-gifplayer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Plays gifs that are in video format automatically with looping only when in viewport in similar fashion to twitter's gif player.",
   "main": "es5/plugin.js",
   "generator-videojs-plugin": {
@@ -19,6 +19,7 @@
     "build:js:collapse": "bundle-collapser dist/videojs-gifplayer.js -o dist/videojs-gifplayer.min.js",
     "build:js:uglify": "uglifyjs dist/videojs-gifplayer.min.js --comments --mangle --compress -o dist/videojs-gifplayer.min.js",
     "build:test": "babel-node scripts/build-test.js",
+    "change": "chg add",
     "clean": "rimraf dist test/dist es5 && mkdirp dist test/dist es5",
     "docs": "npm-run-all docs:*",
     "docs:api": "jsdoc src -r -c jsdoc.json -d docs/api",
@@ -69,6 +70,7 @@
   },
   "files": [
     "CONTRIBUTING.md",
+    "bower.json",
     "dist/",
     "docs/",
     "es5/",
@@ -95,6 +97,7 @@
     "browserify-shim": "^3.8.12",
     "budo": "^8.0.4",
     "bundle-collapser": "^1.2.1",
+    "chg": "^0.3.2",
     "doctoc": "^0.15.0",
     "ghooks": "^1.3.2",
     "glob": "^6.0.3",
