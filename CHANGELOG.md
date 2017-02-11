@@ -1,14 +1,8 @@
 CHANGELOG
 =========
 
-# 0.0.1
-Added bower support.
-
-## 0.0.0
-Working plugin.
-
 ## HEAD (Unreleased)
-_(none)_
+Figuring out versioning and publishing package. Sorry my first time trying it.
 
 --------------------
 
