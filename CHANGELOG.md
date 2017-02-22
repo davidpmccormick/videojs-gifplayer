@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-_(none)_
+Updating `.gitignore` to include dist folder.
 
 --------------------
 
