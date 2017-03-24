@@ -64,10 +64,12 @@ let autoPlayGifs = debounce(() => {
 
     if (player) {
       if (inUserView(gifPlayer)) {
-        if (player.getAttribute('data-restartOnPause')) {
-          player.currentTime(0);
+        if (player.paused()) {
+          if (player.getAttribute('data-restartOnPause')) {
+            player.currentTime(0);
+          }
+          player.play();
         }
-        player.play();
       } else {
         player.pause();
       }
