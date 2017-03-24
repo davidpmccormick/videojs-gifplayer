@@ -59,12 +59,12 @@ function inUserView(el) {
 let autoPlayGifs = debounce(() => {
   let gifPlayers = document.querySelectorAll('.vjs-gifplayer');
 
-  for(let gifPlayer of gifPlayers){
+  for (let gifPlayer of gifPlayers) {
     let player = gifPlayer.player;
 
     if (player) {
       if (inUserView(gifPlayer)) {
-        if(player.getAttribute("data-restartOnPause")) {
+        if (player.getAttribute('data-restartOnPause')) {
           player.currentTime(0);
         }
         player.play();
@@ -72,7 +72,7 @@ let autoPlayGifs = debounce(() => {
         player.pause();
       }
     }
-  };
+  }
 }, 300);
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
@@ -97,13 +97,13 @@ function handleVisibilityChange() {
   if (document[hidden]) {
     let gifPlayers = document.querySelectorAll('.vjs-gifplayer');
 
-    for(let gifPlayer of gifPlayers) {
+    for (let gifPlayer of gifPlayers) {
       let player = gifPlayer.player;
 
       if (player) {
         player.pause();
       }
-    };
+    }
   } else {
     autoPlayGifs();
   }
@@ -131,13 +131,12 @@ const onPlayerReady = (player, options) => {
   player.controls(options.controls);
   // player.autoplay(options.autoplay);
 
-  if(options.restartOnPause) {
-    player.setAttribute("data-restartOnPause", "true");
+  if (options.restartOnPause) {
+    player.setAttribute('data-restartOnPause', 'true');
   }
 
   // player.play();
   autoPlayGifs();
-
 
 };
 
