@@ -4,7 +4,8 @@ import debounce from 'lodash.debounce';
 // Default options for the plugin.
 const defaults = {
   controls: false,
-  loop: true
+  loop: true,
+  restartOnPause: true
 };
 
 // http://stackoverflow.com/a/7557433/2066736
@@ -53,22 +54,25 @@ function inUserView(el) {
   return inViewport(el) && inScroll(el);
 }
 
-// play every gif that is in the in the viewport, and
+// play every gif that is in the viewport, and
 // pause every gif that is out of viewport
 let autoPlayGifs = debounce(() => {
   let gifPlayers = document.querySelectorAll('.vjs-gifplayer');
 
-  gifPlayers.forEach(function gifPlayerHandler(gifPlayer) {
+  for(let gifPlayer of gifPlayers){
     let player = gifPlayer.player;
 
     if (player) {
       if (inUserView(gifPlayer)) {
+        if(player.getAttribute("data-restartOnPause")) {
+          player.currentTime(0);
+        }
         player.play();
       } else {
         player.pause();
       }
     }
-  });
+  };
 }, 300);
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
@@ -93,13 +97,13 @@ function handleVisibilityChange() {
   if (document[hidden]) {
     let gifPlayers = document.querySelectorAll('.vjs-gifplayer');
 
-    gifPlayers.forEach(function pauseVideos(gifPlayer) {
+    for(let gifPlayer of gifPlayers) {
       let player = gifPlayer.player;
 
       if (player) {
         player.pause();
       }
-    });
+    };
   } else {
     autoPlayGifs();
   }
@@ -127,8 +131,13 @@ const onPlayerReady = (player, options) => {
   player.controls(options.controls);
   // player.autoplay(options.autoplay);
 
+  if(options.restartOnPause) {
+    player.setAttribute("data-restartOnPause", "true");
+  }
+
   // player.play();
   autoPlayGifs();
+
 
 };
 

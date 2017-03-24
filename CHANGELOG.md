@@ -2,7 +2,8 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-Updating `.gitignore` to include dist folder.
+Fixing issue #1: issue with forEach on NodeLists.
+Minor: added new default for restart on pause.
 
 --------------------
 

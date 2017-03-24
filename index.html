@@ -25,7 +25,13 @@
     Scroll down to GIF for autoplay.
     <div class="big-div">
     </div>
+    <h3>Default gif player restarts on pause like most standard gif players</h3>
     <video id="videojs-gifplayer-player" class="video-js vjs-default-skin" controls>
+      <source src="//vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
+      <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>
+    </video>
+    <h3>Player with `restartOnPause` set to `false`</h3>
+    <video id="videojs-gifplayer-player2" class="video-js vjs-default-skin" controls>
       <source src="//vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
       <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>
     </video>
@@ -42,6 +48,8 @@
     (function(window, videojs) {
       var player = window.player = videojs('videojs-gifplayer-player');
       player.gifplayer();
+      var player = window.player = videojs('videojs-gifplayer-player2');
+      player.gifplayer({restartOnPause:false});
     }(window, window.videojs));
   </script>
 </body>

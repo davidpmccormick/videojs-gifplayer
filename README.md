@@ -65,6 +65,20 @@ require(['video.js', 'videojs-gifplayer'], function(videojs) {
 });
 ```
 
+### Options
+
+default options are:
+
+```js
+{
+  // options for videojs plugin
+  controls: false,
+  loop: true,
+  // options specific to videojs-gifplayer plugin
+  restartOnPause: true
+}
+```
+
 ## License
 
 MIT. Copyright (c) John D. Johnson II &lt;johnsonjo4531@gmail.com&gt;
